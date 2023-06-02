@@ -1,0 +1,24 @@
+<?php
+    $helper = $this->helper('Dev\UserAccountField\Helper\Frontend\Options');
+    $configArray = $helper->getConfig();
+    $customerId = $block->getCustomerId();
+    $attributeValue = $block->getAttributeValue($customerId);
+    
+?>
+<div class="field select_field required">
+   <label class="label" for="select_field">
+       <span><?= $block->escapeHtml(__('Select Field')) ?></span>
+   </label>
+   <div class="control">
+        <select id="select_field" name="select_field">
+            <option value="" <?php if($attributeValue == NULL){echo "selected";} ?>>Please Select Value</option>
+            <?php 
+                foreach ($configArray as $key => $value) {
+            ?> 
+            <option value="<?php echo $key; ?>" <?php if($attributeValue != NULL){if($attributeValue == $key){echo "selected";}}else{echo NULL;} ?>><?php echo $value;?></option>
+            <?php
+                }
+            ?>
+        </select>
+   </div>
+</div>

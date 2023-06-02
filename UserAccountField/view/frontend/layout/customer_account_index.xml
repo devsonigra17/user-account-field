@@ -1,0 +1,10 @@
+<?xml version="1.0"?>
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" Layout="2columns-left"
+     xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+   <body>
+       <referenceBlock name="content" >
+           <block class="Dev\UserAccountField\Block\Info" name="customer_account_dashboard_info" template="Dev_UserAccountField::account/dashboard/info.phtml"/>
+       </referenceBlock>
+       <!-- <move element="show_select_field" destination="customer_account_dashboard_info" as="customer_account_dashboard_info"/> -->
+   </body>
+</page>
